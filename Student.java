@@ -18,9 +18,7 @@ public class Student
     /**
      * Create a new student with a given name and ID number.
      */
-    /**
-     * Devuelve el numero de caracteres que forman esta cadena
-     */
+
     public Student(String fullName, String studentID )
     {   if(fullName.length () <4 || studentID.length () <3)
         {
@@ -78,10 +76,19 @@ public class Student
      * Return the login name of this student. The login name is a combination
      * of the first four characters of the student's name and the first three
      * characters of the student's ID number.
+     * 
+     * 
+     * MODIFICADO
      */
     public String getLoginName()
     {
-        return name.substring(0,4) + id.substring(0,3);
+
+        if (name.length () >= 4 && id.length () >= 3) { 
+            return name.substring (0,4) + id.substring (0,3); 
+        } 
+        else { 
+            return name + id; 
+        } 
     }
 
     /**
